@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WhetherComponent } from './whether.component';
+import { ModalButtonComponent } from './modal-button.component';
 
-describe('WhetherComponent', () => {
-  let component: WhetherComponent;
-  let fixture: ComponentFixture<WhetherComponent>;
+describe('ModalButtonComponent', () => {
+  let component: ModalButtonComponent;
+  let fixture: ComponentFixture<ModalButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WhetherComponent ]
+      declarations: [ ModalButtonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WhetherComponent);
+    fixture = TestBed.createComponent(ModalButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
