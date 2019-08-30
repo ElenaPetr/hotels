@@ -6,11 +6,13 @@ import { SharedModule } from '../shared/shared.module';
 import { WeatherComponent } from './weather/weather.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HotelsListComponent } from './hotels-list/hotels-list.component';
+import { HotelInfoComponent } from './hotel-info/hotel-info.component';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, WeatherComponent,
     ProfileComponent,
-    HotelsListComponent],
+    HotelsListComponent,
+    HotelInfoComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -20,7 +22,8 @@ import { HotelsListComponent } from './hotels-list/hotels-list.component';
     FooterComponent,
     WeatherComponent,
     ProfileComponent,
-    HotelsListComponent
+    HotelsListComponent,
+    HotelInfoComponent
   ]
 })
 export class FragmentsModule { }

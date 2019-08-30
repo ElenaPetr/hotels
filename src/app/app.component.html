@@ -2,10 +2,10 @@
 <h1>Hot Weather Widget</h1>
 
 <div class="element" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="30px">
-    <app-hotels-list fxFlex="calc(60%-30px)"></app-hotels-list>
+    <app-hotels-list fxFlex="calc(60%-30px)" [hotels]="hotels"></app-hotels-list>
     <div fxFlex="40%" flexLayout="column">
-        <app-weather></app-weather>
-        <app-profile></app-profile>
+        <app-weather [hotel]="hotel"></app-weather>
+        <app-profile [hotel]="hotel"></app-profile>
     </div>
 </div>
 <app-footer></app-footer>

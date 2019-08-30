@@ -1,8 +1,83 @@
-.example-card {
-    max-width: 400px;
+.temperatur {
+  background: #5fb3f9;
+  text-align: center;
+  padding: 1em 1em;
+  border-radius: 5px;
+  margin-bottom: 2.5em;
+  h5 {
+    color: #fff;
+    font-size: 1em;
   }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+  h2 {
+    color: #fff;
+    font-size: 3.2em;
+    display: inline-block;
+    vertical-align: top;
+    font-family: "Roboto", sans-serif;
   }
+  h6 {
+    font-size: 1em;
+    color: #fff;
+    margin: 0.8em 0em 0em 0em;
+  }
+}
+
+span.cloud {
+  background: url(../../../assets/images/cloudy.png) no-repeat;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+@media (max-width: 1600px) {
+  .temperatur {
+    margin-bottom: 1.95em;
+  }
+}
+
+@media (max-width: 1440px) {
+  .temperatur {
+    margin-bottom: 1.5em;
+  }
+}
+
+@media (max-width: 1366px) {
+  .temperatur {
+    margin-bottom: 2.5em;
+  }
+}
+
+@media (max-width: 1024px) {
+  .temperatur {
+    margin-bottom: 2.3em;
+  }
+}
+
+@media (max-width: 768px) {
+  .temperatur {
+    margin-bottom: 2.1em;
+  }
+}
+
+@media (max-width: 736px) {
+  .temperatur {
+    margin-bottom: 2em;
+  }
+}
+@media (max-width: 667px) {
+  .temperatur {
+    margin-bottom: 2em;
+  }
+}
+
+@media (max-width: 640px) {
+  .temperatur {
+    margin-bottom: 2.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .temperatur {
+    margin-bottom: 1.5em;
+  }
+}

@@ -1,0 +1,15 @@
+<div class="activity-row" fxLayout="row" fxLayoutAlign="space-between">
+    <div class="activity-desc" fxFlex="50">
+        <h5>{{hotel?.title}}</h5>
+        <p>{{hotel?.description}}</p>
+        <p>{{hotel?.address}}</p>
+        <h6>Tel:{{hotel?.phone}}</h6>
+    </div>
+    <div class="activity-img" fxFlex="50">
+        <ul>
+            <li *ngFor="let photo of hotel.photos">
+                <img src="../../../{{photo}}" alt="hotel photo" />
+            </li>
+        </ul>
+    </div>
+</div>
