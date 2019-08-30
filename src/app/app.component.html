@@ -1,7 +1,11 @@
-<app-header></app-header>
-<div class="theme-container main" fxLayout="row wrap" fxLayoutGap="10px">
-    <app-weather></app-weather>
-    <app-weather></app-weather>
-    <app-weather></app-weather>
+<!-- <app-header></app-header> -->  
+<h1>Hot Weather Widget</h1>
+
+<div class="element" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="30px">
+    <app-hotels-list fxFlex="calc(60%-30px)"></app-hotels-list>
+    <div fxFlex="40%" flexLayout="column">
+        <app-weather></app-weather>
+        <app-profile></app-profile>
+    </div>
 </div>
 <app-footer></app-footer>

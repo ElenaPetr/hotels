@@ -2,24 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { MaterialModule } from '../shared/shared-modules/material.module';
-import { SharedComponentsModule } from '../shared/shared-components/shared-components.module';
+import { SharedModule } from '../shared/shared.module';
 import { WeatherComponent } from './weather/weather.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HotelsListComponent } from './hotels-list/hotels-list.component';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, WeatherComponent,
-    ProfileComponent],
+    ProfileComponent,
+    HotelsListComponent],
   imports: [
     CommonModule,
-    MaterialModule,
-    SharedComponentsModule,
+    SharedModule,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     WeatherComponent,
-    ProfileComponent
+    ProfileComponent,
+    HotelsListComponent
   ]
 })
 export class FragmentsModule { }
