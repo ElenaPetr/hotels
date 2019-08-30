@@ -15,7 +15,7 @@
             <div class="activity_box">
                 <div class="scrollbar" id="style-2">
                     <div *ngFor="let hotel of hotels; let last = last" [class.last]="last">
-                        <app-hotel-info [hotel]="hotel"></app-hotel-info>
+                        <app-hotel-info [hotel]="hotel" (click)="selectHotel(hotel.id)"></app-hotel-info>
                     </div>
                 </div>
             </div>

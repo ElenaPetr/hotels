@@ -5,6 +5,7 @@
 // }
 .activity-row {
   margin-bottom: 1em;
+  cursor: pointer;
 }
 
 // .activity-desc {
@@ -48,9 +49,7 @@
   .activity-img ul li img {
     border-radius: 50px;
   }
-  .odd{
-    background: #faefef;
-  }
+
   @media (max-width: 320px) {
     .activity-desc h5 {
       color: #000;

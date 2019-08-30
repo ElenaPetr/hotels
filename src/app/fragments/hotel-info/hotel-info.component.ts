@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Hotel } from 'src/app/models/hotel';
 
 @Component({
@@ -12,7 +12,7 @@ export class HotelInfoComponent implements OnInit {
 
   constructor() { }
 
- public ngOnInit() {
+  public ngOnInit() {
   }
 
 }
