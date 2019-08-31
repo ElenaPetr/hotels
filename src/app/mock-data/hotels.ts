@@ -43,7 +43,7 @@ export const HOTELS: Hotel[] = [
       profile: {
         followers: 12,
         following: 111,
-        photo: 'assets/images/b2.jpg'
+        photo: 'assets/images/10.jpg'
       },
       stars: 4
     },
@@ -53,7 +53,7 @@ export const HOTELS: Hotel[] = [
       address: 'Orlando',
       description: 'Lorem ipson0',
       phone: '+3242353434',
-      picture: 'assets/images/3.jpg',
+      picture: 'assets/images/b2.jpg',
       photos: [
         'assets/images/res.jpg',
         'assets/images/r1.jpg'
@@ -66,7 +66,7 @@ export const HOTELS: Hotel[] = [
       profile: {
         followers: 45,
         following: 78,
-        photo: 'assets/images/b3.jpg'
+        photo: 'assets/images/8.jpg'
       },
       stars: 5
     }

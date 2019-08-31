@@ -9,6 +9,7 @@ import { Hotel } from 'src/app/models/hotel';
 export class HotelsListComponent implements OnInit {
 
   @Input() public hotels: Hotel[];
+  @Input() public picture: string;
   @Output() public getHotel: EventEmitter<number> = new EventEmitter();
 
   constructor() { }
@@ -17,7 +18,6 @@ export class HotelsListComponent implements OnInit {
   }
 
   public selectHotel(id: number) {
-    console.log(id);
     this.getHotel.emit(id);
   }
 
