@@ -6,12 +6,9 @@ import { Weather } from 'src/app/models/weather';
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.scss']
 })
-export class WeatherComponent implements OnInit {
+
+export class WeatherComponent {
+
   @Input() public weather: Weather;
-
-  constructor() { }
-
- public ngOnInit() {
-  }
 
 }

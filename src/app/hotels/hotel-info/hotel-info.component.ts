@@ -10,9 +10,15 @@ export class HotelInfoComponent implements OnInit {
 
   @Input() public hotel: Hotel;
 
+  @Output() public favorite: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
 
   public ngOnInit() {
+  }
+
+  public addToFavorite(id: number) {
+    this.favorite.emit(id);
   }
 
 }

@@ -1,0 +1,27 @@
+<div class="activity-row" fxLayout="row" fxLayoutAlign="space-between">
+    <div class="activity-desc" fxFlex="50">
+        <h5>{{hotel?.title}}</h5>
+        <p>{{hotel?.description}}</p>
+        <p>{{hotel?.address}}</p>
+        <h6>Tel:{{hotel?.phone}}</h6>
+    </div>
+    <div class="activity-img" fxFlex="50" fxFlexLoyout="column">
+        <ul fxFlexLoyout="row">
+            <li *ngFor="let photo of hotel.photos">
+                <img src="{{photo}}" alt="hotel photo" />
+            </li>
+        </ul>
+        <button class="favorite-btn" 
+        mat-icon-button color="accent" 
+        aria-label="icon-button with a heart icon"
+        matTooltip="Add to favorite" (click)="addToFavorite(hotel.id)">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button *ngIf="hotel.favorite === true" class="favorite-btn" 
+          mat-icon-button color="accent" 
+          aria-label="icon-button with a clear icon"
+          matTooltip="Delete from favorite" (click)="deleteFavorite(hotel.id)">
+              <mat-icon>clear</mat-icon>
+            </button>
+    </div>
+</div>

@@ -22,7 +22,7 @@ export const HOTELS: Hotel[] = [
         following: 11,
         photo: 'assets/images/b1.jpg'
       },
-      stars: 3
+      stars: 3,
     },
     {
       id: 1,
@@ -45,7 +45,7 @@ export const HOTELS: Hotel[] = [
         following: 111,
         photo: 'assets/images/10.jpg'
       },
-      stars: 4
+      stars: 4,
     },
     {
       id: 2,
@@ -68,6 +68,52 @@ export const HOTELS: Hotel[] = [
         following: 78,
         photo: 'assets/images/8.jpg'
       },
-      stars: 5
+      stars: 5,
+    },
+    {
+      id: 3,
+      title: 'Paradise',
+      address: 'Florida',
+      description: 'nice place',
+      phone: '+3242353258',
+      picture: 'assets/images/b2.jpg',
+      photos: [
+        'assets/images/res.jpg',
+        'assets/images/r1.jpg'
+      ],
+      weather:  {
+        temperature: +25,
+        wind: 2,
+        icon: 'cloud'
+      },
+      profile: {
+        followers: 45,
+        following: 78,
+        photo: 'assets/images/8.jpg'
+      },
+      stars: 5,
+    },
+    {
+      id: 4,
+      title: 'Wind',
+      address: 'Antalia',
+      description: 'Lorem ipson 25',
+      phone: '+3242353434',
+      picture: 'assets/images/b2.jpg',
+      photos: [
+        'assets/images/res.jpg',
+        'assets/images/r1.jpg'
+      ],
+      weather:  {
+        temperature: +28,
+        wind: 4,
+        icon: 'sun'
+      },
+      profile: {
+        followers: 58,
+        following: 78,
+        photo: 'assets/images/8.jpg'
+      },
+      stars: 5,
     }
   ];

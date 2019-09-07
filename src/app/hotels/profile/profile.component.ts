@@ -6,12 +6,7 @@ import { Profile } from 'src/app/models/profile';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
   @Input() public profile: Profile;
-
-  constructor() { }
-
-public ngOnInit() {
-  }
 
 }

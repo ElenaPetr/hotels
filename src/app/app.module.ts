@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FragmentsModule } from './fragments/fragments.module';
 import { SharedModule } from './shared/shared.module';
+import { HotelsModule } from './hotels/hotels.module';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,11 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     FragmentsModule,
-    SharedModule
+    HotelsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

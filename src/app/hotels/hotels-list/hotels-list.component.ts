@@ -9,8 +9,10 @@ import { Hotel } from 'src/app/models/hotel';
 export class HotelsListComponent implements OnInit {
 
   @Input() public hotels: Hotel[];
+  @Input() public title: string;
   @Input() public picture: string;
   @Output() public getHotel: EventEmitter<number> = new EventEmitter();
+  @Output() public favorite: EventEmitter<number> = new EventEmitter();
 
   constructor() { }
 
@@ -19,6 +21,10 @@ export class HotelsListComponent implements OnInit {
 
   public selectHotel(id: number) {
     this.getHotel.emit(id);
+  }
+
+  public addFavorite(id: number) {
+    this.favorite.emit(id);
   }
 
 }
