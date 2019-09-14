@@ -114,6 +114,6 @@ export const HOTELS: Hotel[] = [
         following: 78,
         photo: 'assets/images/8.jpg'
       },
-      stars: 5,
+      stars: 3,
     }
   ];

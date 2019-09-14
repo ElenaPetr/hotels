@@ -8,9 +8,10 @@
     <div class="activity-img" fxFlex="50" fxFlexLoyout="column">
         <ul fxFlexLoyout="row">
             <li *ngFor="let photo of hotel.photos">
-                <img src="{{photo}}" alt="hotel photo" />
+                <img [src]="photo" alt="hotel photo" />
             </li>
         </ul>
+        {{hotel.stars}}
         <button class="favorite-btn" 
         mat-icon-button color="accent" 
         aria-label="icon-button with a heart icon"
@@ -23,5 +24,6 @@
           matTooltip="Delete from favorite" (click)="deleteFavorite(hotel.id)">
               <mat-icon>clear</mat-icon>
             </button>
+         
     </div>
 </div>

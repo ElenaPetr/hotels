@@ -13,8 +13,9 @@ import {
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HotelFilterPipe } from '../pipes/hotel-filter.pipe';
+import { StarsFilterPipe } from '../pipes/stars-filter.pipe';
 @NgModule({
-  declarations: [HotelFilterPipe],
+  declarations: [HotelFilterPipe, StarsFilterPipe],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -39,7 +40,8 @@ import { HotelFilterPipe } from '../pipes/hotel-filter.pipe';
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
-    HotelFilterPipe
+    HotelFilterPipe,
+    StarsFilterPipe
   ]
 })
 export class SharedModule { }

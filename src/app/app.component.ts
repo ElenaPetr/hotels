@@ -4,8 +4,8 @@ import { Hotel } from './models/hotel';
 import { HOTELS } from './mock-data/hotels';
 import { FAVORITEHOTELS } from './mock-data/favorite-hotels';
 import { MatSnackBar } from '@angular/material';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Star } from './models/stars';
+import { STARS } from './mock-data/stars';
 
 @Component({
   selector: 'app-root',
@@ -18,12 +18,13 @@ export class AppComponent implements OnInit {
   public favoriteHotels: Hotel[] = FAVORITEHOTELS;
   public selectedHotel: Hotel = HOTELS[0];
 
-  public title = '';
+  public stars: Star[] = STARS;
+
+  public filterString = '';
 
   public constructor(private snackBar: MatSnackBar) { }
 
   public ngOnInit() {
-    console.log(this.hotels);
   }
 
   public onSelectHotel(id: number) {
@@ -37,7 +38,6 @@ export class AppComponent implements OnInit {
     } else {
       this.favoriteHotels.push(favorite);
     }
-    console.log(this.favoriteHotels);
   }
 
   public openSnackBar(message: string, action: string) {
@@ -47,9 +47,11 @@ export class AppComponent implements OnInit {
   }
 
   public onDeletFavorite(event: number) {
-    console.log('deleted', event);
     this.favoriteHotels = this.favoriteHotels.filter(el => el.id !== event);
-    console.log('favoriteHotels', this.favoriteHotels);
+  }
+
+  public setFilterValue(value: string): void {
+    this.filterString = value;
   }
 
 }

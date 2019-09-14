@@ -7,12 +7,12 @@ import { Hotel } from '../models/hotel';
 export class HotelFilterPipe implements PipeTransform {
 
   public transform(hotels: Hotel[], value: string): any {
+    console.log('hotel pipe');
     if (value.length > 3) {
       return hotels.filter(el => el.title.toLowerCase().includes(value.toLocaleLowerCase())
        || el.description.toLowerCase().includes(value.toLocaleLowerCase()) );
-    } else {
-      return hotels;
     }
+    return hotels;
   }
 
 }

@@ -1,12 +1,11 @@
 <div class="element-left">
-    <div class="element-bg-img"><img src="{{picture}}" alt="" class="img-responsive"> </div>
+    <div class="element-bg-img"><img [src]="picture" alt="" class="img-responsive"> </div>
     <div class="element-left-bottom">
         <div class="ele-strip">
             <ul>
-                <li><a href="#">Hotel</a></li>
-                <li><a href="#">Fishing</a></li>
-                <li><a href="#">Tours</a></li>
-                <li class="anc-bor"><a href="#">Weather</a></li>
+                <li *ngFor="let star of stars" (click)="selectStarValue(star.value)" [class.selected-star]="star.value === starValue">
+                    {{star.view}}
+                </li>
             </ul>
         </div>
         <div class="village">
@@ -14,8 +13,9 @@
             <span class="line"> </span>
             <div class="activity_box">
                 <div class="scrollbar" id="style-2">
-                    <div *ngFor="let hotel of hotels | hotelFilter : title; let last = last" [class.last]="last">
-                        <app-hotel-info [hotel]="hotel" (click)="selectHotel(hotel.id)" (favorite)="addFavorite($event)"></app-hotel-info>
+                    <div *ngFor="let hotel of hotels | hotelFilter : filterString | starsFilter: starValue; last as last" [class.last]="last">
+                        <app-hotel-info [hotel]="hotel" (click)="selectHotel(hotel.id)"
+                            (favorite)="addFavorite($event)"></app-hotel-info>
                     </div>
                 </div>
             </div>
