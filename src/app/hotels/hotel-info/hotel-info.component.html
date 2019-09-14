@@ -15,15 +15,8 @@
         <button class="favorite-btn" 
         mat-icon-button color="accent" 
         aria-label="icon-button with a heart icon"
-        matTooltip="Add to favorite" (click)="addToFavorite(hotel.id)">
+        matTooltip="Add to favorite" (click)="addToFavorite(hotel, $event)">
             <mat-icon>favorite</mat-icon>
-          </button>
-          <button *ngIf="hotel.favorite === true" class="favorite-btn" 
-          mat-icon-button color="accent" 
-          aria-label="icon-button with a clear icon"
-          matTooltip="Delete from favorite" (click)="deleteFavorite(hotel.id)">
-              <mat-icon>clear</mat-icon>
-            </button>
-         
+          </button>       
     </div>
 </div>

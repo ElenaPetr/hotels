@@ -1,9 +1,9 @@
-<div class="element-left">
-    <div class="element-bg-img"><img [src]="picture" alt="" class="img-responsive"> </div>
+<div class="element-left" *ngIf="hotels$">
+    <div class="element-bg-img"><img [src]="selectedHotel?.picture" alt="" class="img-responsive"> </div>
     <div class="element-left-bottom">
         <div class="ele-strip">
             <ul>
-                <li *ngFor="let star of stars" (click)="selectStarValue(star.value)" [class.selected-star]="star.value === starValue">
+                <li *ngFor="let star of stars$ | async" (click)="selectStarValue(star.value)" [class.selected-star]="star.value === starValue">
                     {{star.view}}
                 </li>
             </ul>
@@ -13,9 +13,8 @@
             <span class="line"> </span>
             <div class="activity_box">
                 <div class="scrollbar" id="style-2">
-                    <div *ngFor="let hotel of hotels | hotelFilter : filterString | starsFilter: starValue; last as last" [class.last]="last">
-                        <app-hotel-info [hotel]="hotel" (click)="selectHotel(hotel.id)"
-                            (favorite)="addFavorite($event)"></app-hotel-info>
+                    <div *ngFor="let hotel of hotels$  | async | hotelFilter : filterString | starsFilter: starValue; last as last" [class.last]="last">
+                        <app-hotel-info [hotel]="hotel" (click)="selectHotel(hotel)"></app-hotel-info>
                     </div>
                 </div>
             </div>

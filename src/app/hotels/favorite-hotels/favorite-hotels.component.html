@@ -1,8 +1,8 @@
 
-<mat-card>
+<mat-card *ngIf="favoriteHotels$">
 <div class="activity_box">
     <div class="scrollbar" id="style-2">
-        <div *ngFor="let favorite of favoriteHotels" [class.last]="last">
+        <div *ngFor="let favorite of favoriteHotels$ | async" [class.last]="last">
             <app-favorite-hotels-info [hotel]="favorite" (delete)="deleteFavorite($event)"></app-favorite-hotels-info>
         </div>
     </div>

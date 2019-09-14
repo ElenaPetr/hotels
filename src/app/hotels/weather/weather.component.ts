@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Weather } from 'src/app/models/weather';
+import { Subscription } from 'rxjs';
+import { SharedSelectedHotelService } from 'src/app/shared/services/shared-selected-hotel.service';
 
 @Component({
   selector: 'app-weather',
@@ -9,6 +11,14 @@ import { Weather } from 'src/app/models/weather';
 
 export class WeatherComponent {
 
-  @Input() public weather: Weather;
+  public weather: Weather;
+  public selectedHotelSubscription: Subscription;
+
+  constructor(private sharedSelectedHotelService: SharedSelectedHotelService) {
+    this.selectedHotelSubscription = this.sharedSelectedHotelService.selectedHotel$
+      .subscribe(hotel => {
+        this.weather = hotel.weather;
+      });
+  }
 
 }

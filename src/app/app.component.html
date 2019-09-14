@@ -13,15 +13,13 @@
 </mat-card>
     <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="30px">
 
-        <app-hotels-list fxFlex="calc(40%-30px)" [filterString]="filterString" [hotels]="hotels" [picture]="selectedHotel.picture" [stars]="stars"
-            (getHotel)="onSelectHotel($event)" (favorite)="onAddFavorite($event)"></app-hotels-list>
+        <app-hotels-list fxFlex="calc(40%-30px)" [filterString]="filterString"></app-hotels-list>
         <div fxFlex="30%" flexLayout="column">
-            <app-weather [weather]="selectedHotel?.weather"></app-weather>
-            <app-profile [profile]="selectedHotel?.profile"></app-profile>
+            <app-weather></app-weather>
+            <app-profile></app-profile>
         </div>
         <div fxFlex="30%" flexLayout="column">
-            <app-favorite-hotels *ngIf="favoriteHotels.length > 0" [favoriteHotels]="favoriteHotels"
-                (delete)="onDeletFavorite($event)"></app-favorite-hotels>
+            <app-favorite-hotels></app-favorite-hotels>
         </div>
     </div>
 </div>
