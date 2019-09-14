@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Profile } from 'src/app/models/profile';
 import { SharedSelectedHotelService } from 'src/app/shared/services/shared-selected-hotel.service';
 import { Subscription } from 'rxjs';
@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnDestroy {
   public profile: Profile;
   public selectedHotelSubscription: Subscription;
 
@@ -17,6 +17,10 @@ export class ProfileComponent {
       .subscribe(hotel => {
         this.profile = hotel.profile;
       });
+  }
+
+ public ngOnDestroy() {
+    this.selectedHotelSubscription.unsubscribe();
   }
 
 }

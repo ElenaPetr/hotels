@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Hotel } from 'src/app/models/hotel';
 
 @Component({
@@ -6,14 +6,10 @@ import { Hotel } from 'src/app/models/hotel';
   templateUrl: './favorite-hotels-info.component.html',
   styleUrls: ['./favorite-hotels-info.component.scss']
 })
-export class FavoriteHotelsInfoComponent implements OnInit {
+export class FavoriteHotelsInfoComponent {
 
   @Input() public hotel: Hotel;
   @Output() public delete: EventEmitter<number> = new EventEmitter();
-  public constructor() { }
-
-  public ngOnInit() {
-  }
 
   public deleteFavorite(id: number) {
     this.delete.emit(id);

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Weather } from 'src/app/models/weather';
 import { Subscription } from 'rxjs';
 import { SharedSelectedHotelService } from 'src/app/shared/services/shared-selected-hotel.service';
@@ -9,7 +9,7 @@ import { SharedSelectedHotelService } from 'src/app/shared/services/shared-selec
   styleUrls: ['./weather.component.scss']
 })
 
-export class WeatherComponent {
+export class WeatherComponent implements OnDestroy {
 
   public weather: Weather;
   public selectedHotelSubscription: Subscription;
@@ -19,6 +19,10 @@ export class WeatherComponent {
       .subscribe(hotel => {
         this.weather = hotel.weather;
       });
+  }
+
+  public ngOnDestroy() {
+    this.selectedHotelSubscription.unsubscribe();
   }
 
 }

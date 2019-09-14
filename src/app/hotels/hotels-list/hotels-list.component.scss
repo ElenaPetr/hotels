@@ -1,7 +1,7 @@
 .element-bg-img img {
   border-radius: 6px 6px 0px 0px;
   height: 204px;
-  width:326.09px;
+  width: 326.09px;
 }
 
 .ele-strip {
@@ -20,7 +20,7 @@
   font-size: 1em;
   color: #fff;
   cursor: pointer;
-  &:hover{
+  &:hover {
     color: green;
   }
 }
@@ -72,7 +72,7 @@ ul li.anc-bor {
   background-color: #fda660;
 }
 
-.last{
+.last {
   background: #faefef;
 }
 
@@ -95,4 +95,14 @@ ul li.anc-bor {
   .ele-strip ul li a {
     font-size: 0.9em;
   }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+  z-index: 2000;
 }

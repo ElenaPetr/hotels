@@ -16,6 +16,7 @@ export class HotelsListComponent implements OnInit, OnDestroy {
   @Input() public filterString: string;
   public picture: string;
   public selectedHotel: Hotel;
+  public isLoading = true;
 
   public starValue = '';
   public hotels$: Observable<Hotel[]>;
@@ -28,11 +29,17 @@ export class HotelsListComponent implements OnInit, OnDestroy {
     private sharedSelectedHotelService: SharedSelectedHotelService
   ) {
     this.selectedHotelSubscription = this.sharedSelectedHotelService.selectedHotel$
-      .subscribe((hotel: Hotel) => this.selectedHotel = hotel);
+      .subscribe((hotel: Hotel) => {
+        this.selectedHotel = hotel;
+      });
   }
 
   public ngOnInit() {
-    this.hotels$ = this.sharedHotelsService.getHotels().pipe(tap((hotels: Hotel[]) => this.selectHotel(hotels[0])));
+    this.hotels$ = this.sharedHotelsService.getHotels().pipe(tap((hotels: Hotel[]) => {
+      this.selectHotel(hotels[0]);
+      this.isLoading = false;
+    }
+      ));
     this.stars$ = this.sharedHotelsService.getStars();
   }
 

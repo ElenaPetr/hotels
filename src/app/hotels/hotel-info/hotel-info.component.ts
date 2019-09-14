@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { Hotel } from 'src/app/models/hotel';
 import { SharedFavoriteHotelsService } from 'src/app/shared/services/shared-favorite-hotels.service';
 import { Subscription } from 'rxjs';
@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material';
   templateUrl: './hotel-info.component.html',
   styleUrls: ['./hotel-info.component.scss']
 })
-export class HotelInfoComponent implements OnInit {
+export class HotelInfoComponent implements OnInit, OnDestroy {
 
   @Input() public hotel: Hotel;
 
@@ -20,17 +20,23 @@ export class HotelInfoComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     private sharedFavoriteHotelsService: SharedFavoriteHotelsService
-    ) {
-    this.favoriteHotelsSubscription = this.sharedFavoriteHotelsService.favoriteHotelsHotel$
-      .subscribe(hotels => this.favoriteHotels = hotels);
+  ) {
+    this.favoriteHotelsSubscription = this.sharedFavoriteHotelsService.favoriteHotels$
+      .subscribe(hotels => {
+        this.favoriteHotels = hotels;
+      }
+      );
   }
 
   public ngOnInit() {
   }
+  public ngOnDestroy() {
+    this.favoriteHotelsSubscription.unsubscribe();
+  }
 
   public addToFavorite(hotel: Hotel, event: Event) {
     event.stopPropagation();
-    if (this.favoriteHotels.some((el: Hotel) => el.id === hotel.id)) {
+    if (this.favoriteHotels.length > 0 && this.favoriteHotels.some((el: Hotel) => el.id === hotel.id)) {
       this.openSnackBar('Hotel is in favorite', 'close');
     } else {
       this.sharedFavoriteHotelsService.addFavoriteHotel(hotel);

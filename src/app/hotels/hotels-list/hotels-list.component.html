@@ -1,5 +1,5 @@
-<div class="element-left" *ngIf="hotels$">
-    <div class="element-bg-img"><img [src]="selectedHotel?.picture" alt="" class="img-responsive"> </div>
+<div class="element-left">
+    <div class="element-bg-img" *ngIf="selectedHotel"><img [src]="selectedHotel?.picture" alt="" class="img-responsive"></div>
     <div class="element-left-bottom">
         <div class="ele-strip">
             <ul>
@@ -13,7 +13,7 @@
             <span class="line"> </span>
             <div class="activity_box">
                 <div class="scrollbar" id="style-2">
-                    <div *ngFor="let hotel of hotels$  | async | hotelFilter : filterString | starsFilter: starValue; last as last" [class.last]="last">
+                    <div *ngFor="let hotel of hotels$ | async | hotelFilter : filterString | starsFilter: starValue; last as last" [class.last]="last">
                         <app-hotel-info [hotel]="hotel" (click)="selectHotel(hotel)"></app-hotel-info>
                     </div>
                 </div>

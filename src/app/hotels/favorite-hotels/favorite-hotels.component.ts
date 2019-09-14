@@ -1,31 +1,28 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Hotel } from 'src/app/models/hotel';
-import { Observable, Subscription, of } from 'rxjs';
-import { SharedHotelsService } from 'src/app/shared/services/shared-hotels.service';
-import { tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { SharedFavoriteHotelsService } from 'src/app/shared/services/shared-favorite-hotels.service';
+import { delay, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-favorite-hotels',
   templateUrl: './favorite-hotels.component.html',
   styleUrls: ['./favorite-hotels.component.scss', '../hotel-info/hotel-info.component.scss']
 })
-export class FavoriteHotelsComponent implements OnInit {
+export class FavoriteHotelsComponent implements OnInit, OnDestroy {
 
+  public favoriteHotels: Hotel[];
   public favoriteHotels$: Observable<Hotel[]>;
 
-  public favoriteHotelSubscription: Subscription;
-  @Output() public delete: EventEmitter<number> = new EventEmitter();
-
   public constructor(
-    private sharedHotelsService: SharedHotelsService,
     private sharedFavoriteHotelsService: SharedFavoriteHotelsService) {
-    this.favoriteHotelSubscription = this.sharedFavoriteHotelsService.favoriteHotelsHotel$.
-      subscribe(hotels => this.favoriteHotels$ = of(hotels));
   }
 
   public ngOnInit() {
-    this.favoriteHotels$ = this.sharedHotelsService.getFavoriveHotels();
+    this.favoriteHotels$ = this.sharedFavoriteHotelsService.init();
+  }
+
+  public ngOnDestroy() {
   }
 
   public deleteFavorite(id: number) {

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { tap, first } from 'rxjs/operators';
+import { SharedHotelsService } from './shared/services/shared-hotels.service';
+import { Observable, Subscription } from 'rxjs';
+import { Hotel } from './models/hotel';
 
 
 @Component({
@@ -6,14 +10,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
+  public isLoading = true;
   public filterString = '';
+  public subscription: Subscription;
 
-  public constructor() { }
-
-  public ngOnInit() {
-  }
+  constructor() {}
 
   public setFilterValue(value: string): void {
     this.filterString = value;
