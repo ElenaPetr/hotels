@@ -1,5 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { tap, first } from 'rxjs/operators';
+import { Component } from '@angular/core';
 import { SharedHotelsService } from './shared/services/shared-hotels.service';
 import { Observable, Subscription } from 'rxjs';
 import { Hotel } from './models/hotel';
@@ -15,8 +14,9 @@ export class AppComponent {
   public isLoading = true;
   public filterString = '';
   public subscription: Subscription;
+  public test$: Observable<Hotel[]>;
 
-  constructor() {}
+  constructor(private sharedHotelsService: SharedHotelsService) { }
 
   public setFilterValue(value: string): void {
     this.filterString = value;
