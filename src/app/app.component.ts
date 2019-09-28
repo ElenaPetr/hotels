@@ -35,7 +35,7 @@ export class AppComponent {
   }
 
   public isAdmin() {
-    return this.authorizationLocalStorageService.getAuthorizationToken('token');f
+    return this.authorizationLocalStorageService.getAuthorizationToken('token');
   }
 
 }
