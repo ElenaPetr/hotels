@@ -9,13 +9,19 @@ import {
   MatSnackBarModule,
   MatAutocompleteModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatPaginatorModule,
+  MatDialogModule,
+  MatCheckboxModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HotelFilterPipe } from '../pipes/hotel-filter.pipe';
 import { StarsFilterPipe } from '../pipes/stars-filter.pipe';
+import { FormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [HotelFilterPipe, StarsFilterPipe],
+  declarations: [
+    HotelFilterPipe,
+    StarsFilterPipe],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -27,7 +33,11 @@ import { StarsFilterPipe } from '../pipes/stars-filter.pipe';
     MatSnackBarModule,
     MatAutocompleteModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    MatCheckboxModule,
+    FormsModule
   ],
   exports: [
     MatToolbarModule,
@@ -41,7 +51,11 @@ import { StarsFilterPipe } from '../pipes/stars-filter.pipe';
     MatFormFieldModule,
     MatInputModule,
     HotelFilterPipe,
-    StarsFilterPipe
+    StarsFilterPipe,
+    MatPaginatorModule,
+    MatDialogModule,
+    MatCheckboxModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

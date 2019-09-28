@@ -1,344 +1,323 @@
 {
-    "hotels": [
-        {
-            "id": 0,
-            "title": "Universal Cabana",
-            "address": "Orlando",
-            "description": "Best one!",
-            "phone": "+3242353434",
-            "picture": "assets/images/1.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 12,
-                "wind": 11,
-                "icon": "sun"
-            },
-            "profile": {
-                "followers": 112,
-                "following": 11,
-                "photo": "assets/images/b1.jpg"
-            },
-            "stars": 3
-        },
-        {
-            "id": 1,
-            "title": "Kharkov plaza",
-            "address": "Kharkov",
-            "description": "Five Stars",
-            "phone": "+3242353434",
-            "picture": "assets/images/2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 5,
-                "wind": 4,
-                "icon": "rain"
-            },
-            "profile": {
-                "followers": 12,
-                "following": 111,
-                "photo": "assets/images/10.jpg"
-            },
-            "stars": 4
-        },
-        {
-            "id": 2,
-            "title": "Hotel name",
-            "address": "Orlando",
-            "description": "Lorem ipson0",
-            "phone": "+3242353434",
-            "picture": "assets/images/b2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": -2,
-                "wind": 2,
-                "icon": "cloud"
-            },
-            "profile": {
-                "followers": 45,
-                "following": 78,
-                "photo": "assets/images/8.jpg"
-            },
-            "stars": 5
-        },
-        {
-            "id": 3,
-            "title": "Paradise",
-            "address": "Florida",
-            "description": "nice place",
-            "phone": "+3242353258",
-            "picture": "assets/images/b2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 25,
-                "wind": 2,
-                "icon": "cloud"
-            },
-            "profile": {
-                "followers": 45,
-                "following": 78,
-                "photo": "assets/images/8.jpg"
-            },
-            "stars": 5
-        },
-        {
-            "id": 4,
-            "title": "Wind",
-            "address": "Antalia",
-            "description": "Lorem ipson 25",
-            "phone": "+3242353434",
-            "picture": "assets/images/b2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 28,
-                "wind": 4,
-                "icon": "sun"
-            },
-            "profile": {
-                "followers": 58,
-                "following": 78,
-                "photo": "assets/images/8.jpg"
-            },
-            "stars": 3
-        },
-        {
-            "id": 5,
-            "title": "Wind_1",
-            "address": "Antalia_1",
-            "description": "Lorem ipson 25_1",
-            "phone": "+32423555448",
-            "picture": "assets/images/b2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 38,
-                "wind": 2,
-                "icon": "sun"
-            },
-            "profile": {
-                "followers": 158,
-                "following": 178,
-                "photo": "assets/images/8.jpg"
-            },
-            "stars": 4
-        },
-        {
-            "id": 6,
-            "title": "Wind_2",
-            "address": "Antalia_2",
-            "description": "Lorem ipson 25_2",
-            "phone": "+3242358884",
-            "picture": "assets/images/b2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 29,
-                "wind": 3,
-                "icon": "sun"
-            },
-            "profile": {
-                "followers": 528,
-                "following": 718,
-                "photo": "assets/images/8.jpg"
-            },
-            "stars": 5
-        },
-        {
-            "id": 7,
-            "title": "Wind_7",
-            "address": "Antalia_7",
-            "description": "Lorem ipson 25_7",
-            "phone": "+3242355444",
-            "picture": "assets/images/b2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 18,
-                "wind": 6,
-                "icon": "sun"
-            },
-            "profile": {
-                "followers": 258,
-                "following": 158,
-                "photo": "assets/images/8.jpg"
-            },
-            "stars": 3
-        },
-        {
-            "id": 8,
-            "title": "Wind_8",
-            "address": "Antalia_8",
-            "description": "Lorem ipson 25_8",
-            "phone": "+3242353434",
-            "picture": "assets/images/b2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 24,
-                "wind": 7,
-                "icon": "sun"
-            },
-            "profile": {
-                "followers": 38,
-                "following": 58,
-                "photo": "assets/images/8.jpg"
-            },
-            "stars": 3
-        },
-        {
-            "id": 9,
-            "title": "Wind_9",
-            "address": "Antalia_9",
-            "description": "Lorem ipson 25_9",
-            "phone": "+3242887434",
-            "picture": "assets/images/b2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 33,
-                "wind": 1,
-                "icon": "sun"
-            },
-            "profile": {
-                "followers": 588,
-                "following": 708,
-                "photo": "assets/images/8.jpg"
-            },
-            "stars": 5
-        },
-        {
-            "id": 10,
-            "title": "Wind_10",
-            "address": "Antalia_10",
-            "description": "Lorem ipson 25_10",
-            "phone": "+3222153434",
-            "picture": "assets/images/b2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 25,
-                "wind": 5,
-                "icon": "sun"
-            },
-            "profile": {
-                "followers": 68,
-                "following": 88,
-                "photo": "assets/images/8.jpg"
-            },
-            "stars": 3
-        },
-        {
-            "id": 11,
-            "title": "Wind_11",
-            "address": "Antalia_11",
-            "description": "Lorem ipson 25_11",
-            "phone": "+3241113434",
-            "picture": "assets/images/b2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 35,
-                "wind": 8,
-                "icon": "sun"
-            },
-            "profile": {
-                "followers": 758,
-                "following": 378,
-                "photo": "assets/images/8.jpg"
-            },
-            "stars": 5
-        },
-        {
-            "id": 12,
-            "title": "Wind_12",
-            "address": "Antalia_12",
-            "description": "Lorem ipson 25_12",
-            "phone": "+3242353434",
-            "picture": "assets/images/b2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 28,
-                "wind": 4,
-                "icon": "sun"
-            },
-            "profile": {
-                "followers": 58,
-                "following": 78,
-                "photo": "assets/images/8.jpg"
-            },
-            "stars": 5
-        },
-        {
-            "id": 13,
-            "title": "Wind_13",
-            "address": "Antalia_13",
-            "description": "Lorem ipson 25_13",
-            "phone": "+3242353434",
-            "picture": "assets/images/b2.jpg",
-            "photos": [
-                "assets/images/res.jpg",
-                "assets/images/r1.jpg"
-            ],
-            "weather": {
-                "temperature": 28,
-                "wind": 2,
-                "icon": "sun"
-            },
-            "profile": {
-                "followers": 58,
-                "following": 78,
-                "photo": "assets/images/8.jpg"
-            },
-            "stars": 5
-        }
-    ],
-    "stars": [
-        {
-            "value": 3,
-            "view": "***"
-        },
-        {
-            "value": 4,
-            "view": "****"
-        },
-        {
-            "value": 5,
-            "view": "*****"
-        },
-        {
-            "value": "all",
-            "view": "all"
-        }
-    ]
+  "hotels": [
+    {
+      "id": 5,
+      "title": "2-Wind_1",
+      "address": "Antalia_1",
+      "description": "Lorem ipson 25_1",
+      "phone": "+32423555448",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 38,
+        "wind": 2,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 158,
+        "following": 178,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 4
+    },
+    {
+      "id": 6,
+      "title": "3-Wind_2",
+      "address": "Antalia_2",
+      "description": "Lorem ipson 25_2",
+      "phone": "+3242358884",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 29,
+        "wind": 3,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 528,
+        "following": 718,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 5
+    },
+    {
+      "id": 7,
+      "title": "3-Wind_7",
+      "address": "Antalia_7",
+      "description": "Lorem ipson 25_7",
+      "phone": "+3242355444",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 18,
+        "wind": 6,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 258,
+        "following": 158,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 3
+    },
+    {
+      "id": 8,
+      "title": "3-Wind_8",
+      "address": "Antalia_8",
+      "description": "Lorem ipson 25_8",
+      "phone": "+3242353434",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 24,
+        "wind": 7,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 38,
+        "following": 58,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 3
+    },
+    {
+      "id": 9,
+      "title": "4-Wind_9",
+      "address": "Antalia_9",
+      "description": "Lorem ipson 25_9",
+      "phone": "+3242887434",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 33,
+        "wind": 1,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 588,
+        "following": 708,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 5
+    },
+    {
+      "id": 10,
+      "title": "4-Wind_10",
+      "address": "Antalia_10",
+      "description": "Lorem ipson 25_10",
+      "phone": "+3222153434",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 25,
+        "wind": 5,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 68,
+        "following": 88,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 3
+    },
+    {
+      "id": 11,
+      "title": "4-Wind_11",
+      "address": "Antalia_11",
+      "description": "Lorem ipson 25_11",
+      "phone": "+3241113434",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 35,
+        "wind": 8,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 758,
+        "following": 378,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 5
+    },
+    {
+      "id": 12,
+      "title": "5-Wind_12",
+      "address": "Antalia_12",
+      "description": "Lorem ipson 25_12",
+      "phone": "+3242353434",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 28,
+        "wind": 4,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 58,
+        "following": 78,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 5
+    },
+    {
+      "id": 13,
+      "title": "5-Wind_13",
+      "address": "Antalia_13",
+      "description": "Lorem ipson 25_13",
+      "phone": "+3242353434",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 28,
+        "wind": 2,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 58,
+        "following": 78,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 5
+    },
+    {
+      "id": 14,
+      "title": "5-Wind_13",
+      "address": "Antalia_14",
+      "description": "Lorem ipson 25_13",
+      "phone": "+3242353434",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 28,
+        "wind": 2,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 58,
+        "following": 78,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 5
+    }
+  ],
+  "stars": [
+    {
+      "value": 3,
+      "view": "***"
+    },
+    {
+      "value": 4,
+      "view": "****"
+    },
+    {
+      "value": 5,
+      "view": "*****"
+    },
+    {
+      "value": "all",
+      "view": "all"
+    }
+  ],
+  "favorites": [
+    {
+      "id": 1,
+      "title": "1-Universal Cabana",
+      "address": "Orlando",
+      "description": "Best one!",
+      "phone": "+3242353434",
+      "picture": "assets/images/1.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 12,
+        "wind": 11,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 112,
+        "following": 11,
+        "photo": "assets/images/b1.jpg"
+      },
+      "stars": 3
+    },
+    {
+      "id": 2,
+      "title": "1-Hotel name",
+      "address": "Orlando",
+      "description": "Lorem ipson0",
+      "phone": "+3242353434",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": -2,
+        "wind": 2,
+        "icon": "cloud"
+      },
+      "profile": {
+        "followers": 45,
+        "following": 78,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 5
+    },
+    {
+      "id": 7,
+      "title": "3-Wind_7",
+      "address": "Antalia_7",
+      "description": "Lorem ipson 25_7",
+      "phone": "+3242355444",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 18,
+        "wind": 6,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 258,
+        "following": 158,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 3
+    }
+  ]
 }

@@ -5,6 +5,7 @@ import { Observable, Subscription } from 'rxjs';
 import { SharedHotelsService } from 'src/app/shared/services/shared-hotels.service';
 import { tap } from 'rxjs/operators';
 import { SharedSelectedHotelService } from 'src/app/shared/services/shared-selected-hotel.service';
+import { PageEvent } from '@angular/material';
 
 @Component({
   selector: 'app-hotels-list',
@@ -14,10 +15,21 @@ import { SharedSelectedHotelService } from 'src/app/shared/services/shared-selec
 export class HotelsListComponent implements OnInit, OnDestroy {
 
   @Input() public filterString: string;
+
+  public params: Partial<PageEvent> = {
+    pageSize: 3,
+    pageIndex: 1
+  };
+
   public picture: string;
   public selectedHotel: Hotel;
 
   public starValue = '';
+
+  public length: number;
+  public pageSize = 3;
+  public pageSizeOptions: number[] = [3, 5];
+
   public hotels$: Observable<Hotel[]>;
   public stars$: Observable<Star[]>;
 
@@ -34,11 +46,13 @@ export class HotelsListComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit() {
-    // this.hotels$ = this.sharedHotelsService.getHotels();
-    this.hotels$ = this.sharedHotelsService.getHotels().pipe(tap((hotels: Hotel[]) => {
-      this.selectHotel(hotels[0]);
-    }
-      ));
+    this.sharedHotelsService.getAllHotels().subscribe(hotels => {
+      this.length = hotels.length;
+    });
+
+    this.hotels$ = this.sharedHotelsService.getHotels(this.params).pipe(
+      tap((hotels: Hotel[]) => this.selectHotel(hotels[0])));
+
     this.stars$ = this.sharedHotelsService.getStars();
   }
 
@@ -52,6 +66,17 @@ export class HotelsListComponent implements OnInit, OnDestroy {
 
   public selectStarValue(starValue: string) {
     this.starValue = starValue;
+  }
+
+  public goToPage(event: PageEvent) {
+    this.params.pageIndex = event.pageIndex + 1;
+    this.params.pageSize = event.pageSize;
+    this.hotels$ = this.sharedHotelsService.getHotels(this.params);
+  }
+
+  public deleteHotel(event: number) {
+    this.sharedHotelsService.deleteHotel(event).subscribe();
+    this.hotels$ = this.sharedHotelsService.getHotels(this.params);
   }
 
 }

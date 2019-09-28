@@ -1,6 +1,6 @@
 <div class="activity-row" fxLayout="row" fxLayoutAlign="space-between">
     <div class="activity-desc" fxFlex="50">
-        <h5>{{hotel?.title}}</h5>
+        <h5>{{hotel?.title}} {{hotel?.id}}</h5>
         <p>{{hotel?.description}}</p>
         <p>{{hotel?.address}}</p>
         <h6>Tel:{{hotel?.phone}}</h6>
@@ -12,11 +12,19 @@
             </li>
         </ul>
         {{hotel.stars}}
-        <button class="favorite-btn" 
-        mat-icon-button color="accent" 
-        aria-label="icon-button with a heart icon"
-        matTooltip="Add to favorite" (click)="addToFavorite(hotel, $event)">
+        <button class="favorite-btn" mat-icon-button color="accent" aria-label="icon-button with a heart icon"
+            matTooltip="Add to favorite" (click)="addToFavorite(hotel, $event)">
             <mat-icon>favorite</mat-icon>
-          </button>       
+        </button>
     </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-between" *ngIf="isAdmin()">
+    <button class="favorite-btn" mat-icon-button color="accent" aria-label="icon-button with a clear icon"
+        matTooltip="Delete hotel" (click)="deleteHotel(hotel, $event)">
+        <mat-icon>clear</mat-icon>
+    </button>
+    <button class="favorite-btn" mat-icon-button color="primary" aria-label="icon-button with a edit icon"
+    matTooltip="edit hotel" (click)="editHotel(hotel, $event)">
+    <mat-icon>edit</mat-icon>
+</button>
 </div>

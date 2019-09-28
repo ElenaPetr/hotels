@@ -1,14 +1,15 @@
 <app-header></app-header>
 <h1>Hot Weather Widget</h1>
 <div class="element" fxLayout="column" fxLayoutGap="30px">
-<mat-card class="app-card">
-    <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input #myInput matInput placeholder="Placeholder" (keyup)="setFilterValue(myInput.value)">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-</mat-card>
+    <mat-checkbox (change)="checkBox($event)" [checked]="isAdmin()">Are you admin?</mat-checkbox>
+    <mat-card class="app-card">
+        <mat-form-field appearance="outline">
+            <mat-label>Outline form field</mat-label>
+            <input #myInput matInput placeholder="Placeholder" (keyup)="setFilterValue(myInput.value)">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+    </mat-card>
     <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="30px">
 
         <app-hotels-list fxFlex="calc(40%-30px)" [filterString]="filterString"></app-hotels-list>

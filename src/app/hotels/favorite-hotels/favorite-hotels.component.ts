@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { SharedFavoriteHotelsService } from 'src/app/shared/services/favorites/shared-favorite-hotels.service';
+import { switchMap } from 'rxjs/operators';
+import { HttpFavoritesService } from 'src/app/shared/services/favorites/http-favorites.service';
 import { Hotel } from 'src/app/models/hotel';
-import { Observable } from 'rxjs';
-import { SharedFavoriteHotelsService } from 'src/app/shared/services/shared-favorite-hotels.service';
-import { delay, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-favorite-hotels',
@@ -12,20 +13,38 @@ import { delay, tap } from 'rxjs/operators';
 export class FavoriteHotelsComponent implements OnInit, OnDestroy {
 
   public favoriteHotels: Hotel[];
-  public favoriteHotels$: Observable<Hotel[]>;
+  public favoriteSubscription: Subscription;
 
   public constructor(
-    private sharedFavoriteHotelsService: SharedFavoriteHotelsService) {
+    private sharedFavoriteHotelsService: SharedFavoriteHotelsService,
+    private httpFavoritesService: HttpFavoritesService) {
+    this.getFavorites();
+    this.favoriteSubscription = this.sharedFavoriteHotelsService.favorites$.subscribe(favorites => {
+      this.favoriteHotels = favorites;
+      console.log('from favoritSubscription', this.favoriteHotels);
+    });
   }
 
   public ngOnInit() {
-    this.favoriteHotels$ = this.sharedFavoriteHotelsService.init();
   }
 
+  public getFavorites(): void {
+    this.httpFavoritesService.getFavorites().subscribe(favorites => {
+      console.log(favorites);
+      this.favoriteHotels = favorites;
+    });
+  }
+
+
   public ngOnDestroy() {
+    this.favoriteSubscription.unsubscribe();
   }
 
   public deleteFavorite(id: number) {
-    this.sharedFavoriteHotelsService.deleteFavoriteHotel(id);
+    this.httpFavoritesService.deleteFavorive(id).pipe(
+      switchMap(() => this.httpFavoritesService.getFavorites())).subscribe(f => {
+        console.log(f);
+        this.sharedFavoriteHotelsService.setFavorites(f);
+      });
   }
 }
