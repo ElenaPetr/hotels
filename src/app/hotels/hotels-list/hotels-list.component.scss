@@ -3,20 +3,20 @@
   height: 204px;
   width: 326.09px;
 }
-
-.ele-strip {
-  background: #fda660;
-  padding: 1em 1em;
-  margin: -3px 0px 0px 0px;
+.element-left-bottom {
+   margin-top: -3px;
 }
-
+.ele-strip {
+  background: #f39a58;
+  padding: 1em 1em;
+  margin: 0;
+}
 .ele-strip ul {
   text-align: center;
 }
 .ele-strip ul li {
   display: inline-block;
   padding: 0em 0.5em;
-  border-right: 1px solid #fff;
   font-size: 1em;
   color: #fff;
   cursor: pointer;
@@ -24,13 +24,12 @@
     color: green;
   }
 }
+.ele-strip ul li:not(:last-child){
+  border-right: 1px solid #fff;
+}
 .ele-strip ul li.selected-star {
   color: green;
 }
-// .ele-strip ul li a {
-//   font-size: 1em;
-//   color: #fff;
-// }
 .activity_box {
   background: #fff;
   min-height: 120px;
@@ -72,7 +71,7 @@ ul li.anc-bor {
   background-color: #fda660;
 }
 
-.last {
+.selected {
   background: #faefef;
 }
 

@@ -15,11 +15,13 @@ export class ProfileComponent implements OnDestroy {
   constructor(private sharedSelectedHotelService: SharedSelectedHotelService) {
     this.selectedHotelSubscription = this.sharedSelectedHotelService.selectedHotel$
       .subscribe(hotel => {
-        this.profile = hotel.profile;
+        if (hotel) {
+          this.profile = hotel.profile;
+        }
       });
   }
 
- public ngOnDestroy() {
+  public ngOnDestroy() {
     this.selectedHotelSubscription.unsubscribe();
   }
 

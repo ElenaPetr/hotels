@@ -8,6 +8,11 @@ import { HotelInfoComponent } from './hotel-info/hotel-info.component';
 import { SharedModule } from '../shared/shared.module';
 import { FavoriteHotelsComponent } from './favorite-hotels/favorite-hotels.component';
 import { FavoriteHotelsInfoComponent } from './favorite-hotels/favorite-hotels-info/favorite-hotels-info.component';
+import { HotelsRoutingModule } from './hotels-routing.module';
+import { HotelsComponent } from './hotels/hotels.component';
+import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
+import { CommentsComponent } from './comments/comments.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 
 @NgModule({
@@ -17,11 +22,16 @@ import { FavoriteHotelsInfoComponent } from './favorite-hotels/favorite-hotels-i
     HotelsListComponent,
     HotelInfoComponent,
     FavoriteHotelsComponent,
-    FavoriteHotelsInfoComponent
+    FavoriteHotelsInfoComponent,
+    HotelsComponent,
+    HotelDetailComponent,
+    CommentsComponent,
+    ContactsComponent
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    HotelsRoutingModule
   ],
   exports: [
     WeatherComponent,
@@ -29,7 +39,9 @@ import { FavoriteHotelsInfoComponent } from './favorite-hotels/favorite-hotels-i
     HotelsListComponent,
     HotelInfoComponent,
     FavoriteHotelsComponent,
-    FavoriteHotelsInfoComponent
+    FavoriteHotelsInfoComponent,
+    HotelsComponent,
+    HotelDetailComponent
   ]
 })
 export class HotelsModule { }

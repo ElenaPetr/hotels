@@ -162,29 +162,6 @@
       "stars": 5
     },
     {
-      "id": 12,
-      "title": "5-Wind_12",
-      "address": "Antalia_12",
-      "description": "Lorem ipson 25_12",
-      "phone": "+3242353434",
-      "picture": "assets/images/b2.jpg",
-      "photos": [
-        "assets/images/res.jpg",
-        "assets/images/r1.jpg"
-      ],
-      "weather": {
-        "temperature": 28,
-        "wind": 4,
-        "icon": "sun"
-      },
-      "profile": {
-        "followers": 58,
-        "following": 78,
-        "photo": "assets/images/8.jpg"
-      },
-      "stars": 5
-    },
-    {
       "id": 13,
       "title": "5-Wind_13",
       "address": "Antalia_13",
@@ -274,10 +251,10 @@
       "stars": 3
     },
     {
-      "id": 2,
-      "title": "1-Hotel name",
-      "address": "Orlando",
-      "description": "Lorem ipson0",
+      "id": 14,
+      "title": "5-Wind_13",
+      "address": "Antalia_14",
+      "description": "Lorem ipson 25_13",
       "phone": "+3242353434",
       "picture": "assets/images/b2.jpg",
       "photos": [
@@ -285,39 +262,39 @@
         "assets/images/r1.jpg"
       ],
       "weather": {
-        "temperature": -2,
+        "temperature": 28,
         "wind": 2,
-        "icon": "cloud"
+        "icon": "sun"
       },
       "profile": {
-        "followers": 45,
+        "followers": 58,
         "following": 78,
         "photo": "assets/images/8.jpg"
       },
       "stars": 5
     },
     {
-      "id": 7,
-      "title": "3-Wind_7",
-      "address": "Antalia_7",
-      "description": "Lorem ipson 25_7",
-      "phone": "+3242355444",
+      "id": 5,
+      "title": "2-Wind_1",
+      "address": "Antalia_1",
+      "description": "Lorem ipson 25_1",
+      "phone": "+32423555448",
       "picture": "assets/images/b2.jpg",
       "photos": [
         "assets/images/res.jpg",
         "assets/images/r1.jpg"
       ],
       "weather": {
-        "temperature": 18,
-        "wind": 6,
+        "temperature": 38,
+        "wind": 2,
         "icon": "sun"
       },
       "profile": {
-        "followers": 258,
-        "following": 158,
+        "followers": 158,
+        "following": 178,
         "photo": "assets/images/8.jpg"
       },
-      "stars": 3
+      "stars": 4
     }
   ]
 }

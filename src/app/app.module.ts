@@ -9,10 +9,17 @@ import { FragmentsModule } from './fragments/fragments.module';
 import { SharedModule } from './shared/shared.module';
 import { HotelsModule } from './hotels/hotels.module';
 import { HttpInterceptorService } from './shared/services/http-interceptor.service';
+import { ContactsComponent } from './pages/contacts/contacts.component';
+import { AboutComponent } from './pages/about/about.component';
+import { AppRoutingModule } from './app-routing.module';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ContactsComponent,
+    AboutComponent,
+    NotFoundPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,6 +29,7 @@ import { HttpInterceptorService } from './shared/services/http-interceptor.servi
     FragmentsModule,
     HotelsModule,
     SharedModule,
+    AppRoutingModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },

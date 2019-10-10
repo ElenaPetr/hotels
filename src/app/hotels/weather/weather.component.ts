@@ -17,7 +17,9 @@ export class WeatherComponent implements OnDestroy {
   constructor(private sharedSelectedHotelService: SharedSelectedHotelService) {
     this.selectedHotelSubscription = this.sharedSelectedHotelService.selectedHotel$
       .subscribe(hotel => {
-        this.weather = hotel.weather;
+        if (hotel) {
+          this.weather = hotel.weather;
+        }
       });
   }
 

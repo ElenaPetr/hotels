@@ -26,6 +26,7 @@ export class SharedHotelsService {
   }
 
   public getHotels(params: Partial<PageEvent>): Observable<Hotel[]> {
+    console.log('service get hotels by page params');
     const httpParams: HttpParams = new HttpParams({
       fromObject: {
         _page: String(params.pageIndex),
@@ -37,6 +38,16 @@ export class SharedHotelsService {
       catchError(() => {
         console.log('error');
         return of([]);
+      })
+    );
+  }
+
+  public getHotelById(id: string): Observable<Hotel> {
+    return this.http.get<Hotel>(`${this.url}/${id}`).pipe(
+      tap(() => console.log('get stars')),
+      catchError(() => {
+        console.log('error');
+        return of(null);
       })
     );
   }

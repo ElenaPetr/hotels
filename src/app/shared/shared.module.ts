@@ -12,7 +12,8 @@ import {
   MatInputModule,
   MatPaginatorModule,
   MatDialogModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatListModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HotelFilterPipe } from '../pipes/hotel-filter.pipe';
@@ -37,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatDialogModule,
     MatCheckboxModule,
+    MatListModule,
     FormsModule
   ],
   exports: [
@@ -55,6 +57,7 @@ import { FormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatDialogModule,
     MatCheckboxModule,
+    MatListModule,
     FormsModule
   ]
 })
