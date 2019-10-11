@@ -13,12 +13,11 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { UsersModule } from './pages/users/users.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactsComponent,
-    AboutComponent,
     NotFoundPageComponent,
   ],
   imports: [
@@ -27,9 +26,8 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FragmentsModule,
-    HotelsModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },

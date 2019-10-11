@@ -41,11 +41,11 @@ export class HotelsListComponent implements OnInit, OnDestroy {
     private sharedSelectedHotelService: SharedSelectedHotelService
   ) {
     this.hotels$ = combineLatest(this.sharedSelectedHotelService.selectedHotel$,
-      this.route.queryParams).pipe(
+      this.route.queryParamMap).pipe(
         switchMap(result => {
-          if (result[1]) {
-            this.params.pageIndex = result[1].pageIndex - 1;
-            this.params.pageSize = result[1].pageSize;
+          if (result[1].has('pageIndex')) {
+            this.params.pageIndex = +result[1].get('pageIndex') - 1;
+            this.params.pageSize = +result[1].get('pageSize');
             return this.sharedHotelsService.getHotels(this.params).pipe(
               tap((hotels: Hotel[]) => {
                 if (!result[0]) {
@@ -55,7 +55,6 @@ export class HotelsListComponent implements OnInit, OnDestroy {
               })
             );
           } else {
-            this.params.pageIndex = this.params.pageIndex + 1;
             return this.sharedHotelsService.getHotels(this.params).pipe(
               tap((hotels: Hotel[]) => {
                 if (!result[0]) {
@@ -92,8 +91,10 @@ export class HotelsListComponent implements OnInit, OnDestroy {
   }
 
   public goToPage(event: PageEvent) {
+    console.log(event.pageIndex);
     this.params.pageIndex = event.pageIndex + 1;
     this.params.pageSize = event.pageSize;
+    console.log(this.params);
     this.router.navigate([], {
       skipLocationChange: false,
       replaceUrl: true,

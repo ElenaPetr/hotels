@@ -6,7 +6,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [
-  { path: '', component: HotelsComponent, data: { shouldReuse: true } },
+  { path: '', component: HotelsComponent },
   {
     path: 'hotel/:id', component: HotelDetailComponent, children: [
       {

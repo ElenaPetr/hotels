@@ -19,10 +19,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HotelFilterPipe } from '../pipes/hotel-filter.pipe';
 import { StarsFilterPipe } from '../pipes/stars-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { AccessDirective } from './directives/access.directive';
 @NgModule({
   declarations: [
     HotelFilterPipe,
-    StarsFilterPipe],
+    StarsFilterPipe,
+    AccessDirective],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -58,7 +60,8 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatCheckboxModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    AccessDirective
   ]
 })
 export class SharedModule { }

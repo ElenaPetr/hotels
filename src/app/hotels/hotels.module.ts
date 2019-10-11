@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
 import { WeatherComponent } from './weather/weather.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HotelsListComponent } from './hotels-list/hotels-list.component';
@@ -13,7 +13,6 @@ import { HotelsComponent } from './hotels/hotels.component';
 import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
 import { CommentsComponent } from './comments/comments.component';
 import { ContactsComponent } from './contacts/contacts.component';
-
 
 @NgModule({
   declarations: [
@@ -30,6 +29,7 @@ import { ContactsComponent } from './contacts/contacts.component';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     SharedModule,
     HotelsRoutingModule
   ],
