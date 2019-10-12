@@ -91,10 +91,8 @@ export class HotelsListComponent implements OnInit, OnDestroy {
   }
 
   public goToPage(event: PageEvent) {
-    console.log(event.pageIndex);
     this.params.pageIndex = event.pageIndex + 1;
     this.params.pageSize = event.pageSize;
-    console.log(this.params);
     this.router.navigate([], {
       skipLocationChange: false,
       replaceUrl: true,

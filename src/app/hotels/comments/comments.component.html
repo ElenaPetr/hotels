@@ -1,1 +1,6 @@
-<p>comments works!</p>
+<div *ngIf="(comments$ | async) as comments">
+    <div *ngFor="let comment of comments?.comments">
+        <blockquote>{{comment.description}}</blockquote>
+        <span> {{comment.author}}</span>
+    </div>
+</div>

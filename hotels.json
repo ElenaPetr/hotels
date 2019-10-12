@@ -296,5 +296,196 @@
       },
       "stars": 4
     }
+  ],
+  "comments": [
+    {
+      "id": "5",
+      "comments": [
+        {
+          "author": "Julia",
+          "description": "good comment for hotel id 5"
+        },
+        {
+          "author": "Jack",
+          "description": "awesome comment for hotel id 5"
+        },
+        {
+          "author": "Nick",
+          "description": "fun comment for hotel id 5"
+        },
+        {
+          "author": "Lisa",
+          "description": "sad comment for hotel id 5"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "comments": [
+        {
+          "author": "Julia",
+          "description": "good comment for hotel id 6"
+        },
+        {
+          "author": "Jack",
+          "description": "awesome comment for hotel id 6"
+        },
+        {
+          "author": "Nick",
+          "description": "fun comment for hotel id 6"
+        },
+        {
+          "author": "Lisa",
+          "description": "sad comment for hotel id 6"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "comments": [
+        {
+          "author": "Julia",
+          "description": "good comment for hotel id 7"
+        },
+        {
+          "author": "Jack",
+          "description": "awesome comment for hotel id 7"
+        },
+        {
+          "author": "Nick",
+          "description": "fun comment for hotel id 7"
+        },
+        {
+          "author": "Lisa",
+          "description": "sad comment for hotel id 7"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "comments": [
+        {
+          "author": "Julia",
+          "description": "good comment for hotel id 8"
+        },
+        {
+          "author": "Jack",
+          "description": "awesome comment for hotel id 8"
+        },
+        {
+          "author": "Nick",
+          "description": "fun comment for hotel id 8"
+        },
+        {
+          "author": "Lisa",
+          "description": "sad comment for hotel id 8"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "comments": [
+        {
+          "author": "Julia",
+          "description": "good comment for hotel id 9"
+        },
+        {
+          "author": "Jack",
+          "description": "awesome comment for hotel id 9"
+        },
+        {
+          "author": "Nick",
+          "description": "fun comment for hotel id 9"
+        },
+        {
+          "author": "Lisa",
+          "description": "sad comment for hotel id 9"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "comments": [
+        {
+          "author": "Julia",
+          "description": "good comment for hotel id 10"
+        },
+        {
+          "author": "Jack",
+          "description": "awesome comment for hotel id 10"
+        },
+        {
+          "author": "Nick",
+          "description": "fun comment for hotel id 10"
+        },
+        {
+          "author": "Lisa",
+          "description": "sad comment for hotel id 10"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "comments": [
+        {
+          "author": "Julia",
+          "description": "good comment for hotel id 11"
+        },
+        {
+          "author": "Jack",
+          "description": "awesome comment for hotel id 11"
+        },
+        {
+          "author": "Nick",
+          "description": "fun comment for hotel id 11"
+        },
+        {
+          "author": "Lisa",
+          "description": "sad comment for hotel id 11"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "comments": [
+        {
+          "author": "Julia",
+          "description": "good comment for hotel id 12"
+        },
+        {
+          "author": "Jack",
+          "description": "awesome comment for hotel id 12"
+        },
+        {
+          "author": "Nick",
+          "description": "fun comment for hotel id 12"
+        },
+        {
+          "author": "Lisa",
+          "description": "sad comment for hotel id 12"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "comments": [
+        {
+          "author": "Julia",
+          "description": "good comment for hotel id 13"
+        },
+        {
+          "author": "Jack",
+          "description": "awesome comment for hotel id 13"
+        },
+        {
+          "author": "Nick",
+          "description": "fun comment for hotel id 13"
+        },
+        {
+          "author": "Lisa",
+          "description": "sad comment for hotel id 13"
+        }
+      ]
+    }
   ]
 }

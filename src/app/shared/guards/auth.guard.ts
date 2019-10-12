@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Route, CanLoad } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { AuthorizationLocalStorageService } from '../services/authorization-local-storage.service';
-import { delay, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
