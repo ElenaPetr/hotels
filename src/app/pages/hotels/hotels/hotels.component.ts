@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { SharedHotelsService } from '../../shared/services/shared-hotels.service';
+import { SharedHotelsService } from '../../../shared/services/shared-hotels.service';
 import { Observable, Subscription } from 'rxjs';
-import { Hotel } from '../../models/hotel';
+import { Hotel } from '../../../models/hotel';
 import { MatCheckboxChange } from '@angular/material';
-import { AuthorizationLocalStorageService } from '../../shared/services/authorization-local-storage.service';
+import { AuthorizationLocalStorageService } from '../../../shared/services/authorization-local-storage.service';
 
 @Component({
   selector: 'app-main',

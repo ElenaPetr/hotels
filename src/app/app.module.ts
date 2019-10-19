@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FragmentsModule } from './fragments/fragments.module';
 import { SharedModule } from './shared/shared.module';
-import { HotelsModule } from './hotels/hotels.module';
+import { HotelsModule } from './pages/hotels/hotels.module';
 import { HttpInterceptorService } from './shared/services/http-interceptor.service';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { AboutComponent } from './pages/about/about.component';

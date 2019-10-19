@@ -5,7 +5,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HotelsListComponent } from './hotels-list/hotels-list.component';
 import { HotelInfoComponent } from './hotel-info/hotel-info.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { FavoriteHotelsComponent } from './favorite-hotels/favorite-hotels.component';
 import { FavoriteHotelsInfoComponent } from './favorite-hotels/favorite-hotels-info/favorite-hotels-info.component';
 import { HotelsRoutingModule } from './hotels-routing.module';
