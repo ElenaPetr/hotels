@@ -299,7 +299,8 @@
   ],
   "comments": [
     {
-      "id": "5",
+      "id": 5,
+      "hotelId": 5,
       "comments": [
         {
           "author": "Julia",
@@ -320,7 +321,8 @@
       ]
     },
     {
-      "id": "6",
+      "id": 6,
+      "hotelId": 6,
       "comments": [
         {
           "author": "Julia",
@@ -341,7 +343,8 @@
       ]
     },
     {
-      "id": "7",
+      "id": 7,
+      "hotelId": 7,
       "comments": [
         {
           "author": "Julia",
@@ -362,7 +365,8 @@
       ]
     },
     {
-      "id": "8",
+      "id": 8,
+      "hotelId": 8,
       "comments": [
         {
           "author": "Julia",
@@ -383,7 +387,8 @@
       ]
     },
     {
-      "id": "9",
+      "id": 9,
+      "hotelId": 9,
       "comments": [
         {
           "author": "Julia",
@@ -404,7 +409,8 @@
       ]
     },
     {
-      "id": "10",
+      "id": 10,
+      "hotelId": 10,
       "comments": [
         {
           "author": "Julia",
@@ -425,7 +431,8 @@
       ]
     },
     {
-      "id": "11",
+      "id": 11,
+      "hotelId": 11,
       "comments": [
         {
           "author": "Julia",
@@ -446,7 +453,8 @@
       ]
     },
     {
-      "id": "12",
+      "id": 12,
+      "hotelId": 12,
       "comments": [
         {
           "author": "Julia",
@@ -467,7 +475,8 @@
       ]
     },
     {
-      "id": "13",
+      "id": 13,
+      "hotelId": 13,
       "comments": [
         {
           "author": "Julia",

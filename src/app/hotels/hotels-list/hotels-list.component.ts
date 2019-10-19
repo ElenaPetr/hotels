@@ -5,7 +5,7 @@ import { Observable, Subscription, combineLatest, of } from 'rxjs';
 import { SharedHotelsService } from 'src/app/shared/services/shared-hotels.service';
 import { SharedSelectedHotelService } from 'src/app/shared/services/shared-selected-hotel.service';
 import { PageEvent } from '@angular/material';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params, ParamMap } from '@angular/router';
 import { tap, switchMap } from 'rxjs/operators';
 
 @Component({
@@ -13,13 +13,13 @@ import { tap, switchMap } from 'rxjs/operators';
   templateUrl: './hotels-list.component.html',
   styleUrls: ['./hotels-list.component.scss']
 })
-export class HotelsListComponent implements OnInit, OnDestroy {
+export class HotelsListComponent implements OnInit {
 
   @Input() public filterString: string;
 
   public params: Partial<PageEvent> = {
     pageSize: 3,
-    pageIndex: 0
+    pageIndex: 1
   };
 
   public picture: string;
@@ -28,44 +28,18 @@ export class HotelsListComponent implements OnInit, OnDestroy {
   public starValue = '';
 
   public length: number;
-  // public pageSize = 3;
   public pageSizeOptions: number[] = [3, 5];
 
   public hotels$: Observable<Hotel[]>;
   public stars$: Observable<Star[]>;
+
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private sharedHotelsService: SharedHotelsService,
     private sharedSelectedHotelService: SharedSelectedHotelService
-  ) {
-    this.hotels$ = combineLatest(this.sharedSelectedHotelService.selectedHotel$,
-      this.route.queryParamMap).pipe(
-        switchMap(result => {
-          if (result[1].has('pageIndex')) {
-            this.params.pageIndex = +result[1].get('pageIndex') - 1;
-            this.params.pageSize = +result[1].get('pageSize');
-            return this.sharedHotelsService.getHotels(this.params).pipe(
-              tap((hotels: Hotel[]) => {
-                if (!result[0]) {
-                  this.selectHotel(hotels[0]);
-                }
-                this.selectedHotel = result[0];
-              })
-            );
-          } else {
-            return this.sharedHotelsService.getHotels(this.params).pipe(
-              tap((hotels: Hotel[]) => {
-                if (!result[0]) {
-                  this.selectHotel(hotels[0]);
-                }
-                this.selectedHotel = result[0];
-              }));
-          }
-        })
-      );
-  }
+  ) { }
 
   public ngOnInit() {
     this.sharedHotelsService.getAllHotels().subscribe(hotels => {
@@ -73,13 +47,29 @@ export class HotelsListComponent implements OnInit, OnDestroy {
     });
 
     this.stars$ = this.sharedHotelsService.getStars();
+    this.fetchHotels();
   }
 
-  public ngOnDestroy() { }
+  public fetchHotels(params?: Partial<PageEvent>): void {
+    console.log('fetchHotels');
+    this.hotels$ = this.route.queryParamMap.pipe(
+      switchMap((data: ParamMap) => {
+        if (data.has('pageIndex')) {
+          this.params.pageIndex = Number(data.get('pageIndex'));
+          this.params.pageSize = Number(data.get('pageSize'));
+        }
+        return this.sharedHotelsService.getHotels(this.params);
+      })
+    );
+  }
+
+  public pageIndex() {
+    return this.params.pageIndex - 1;
+  }
 
   public toHotelDetail(hotel: Hotel) {
     this.selectHotel(hotel);
-    this.router.navigate(['hotel', hotel.id]);
+    this.router.navigate(['hotels', hotel.id]);
   }
 
   public selectStarValue(starValue: string) {
@@ -93,21 +83,17 @@ export class HotelsListComponent implements OnInit, OnDestroy {
   public goToPage(event: PageEvent) {
     this.params.pageIndex = event.pageIndex + 1;
     this.params.pageSize = event.pageSize;
-    this.router.navigate([], {
-      skipLocationChange: false,
-      replaceUrl: true,
-      relativeTo: this.route,
-      queryParams: this.params,
-    });
+    this.router.navigate([],
+      {
+        relativeTo: this.route,
+        queryParams: this.params
+      });
+    this.fetchHotels();
   }
 
   public deleteHotel(event: number) {
     this.sharedHotelsService.deleteHotel(event).subscribe();
     this.hotels$ = this.sharedHotelsService.getHotels(this.params);
-  }
-
-  public isSelected(hotelId: number): boolean {
-    return hotelId === this.selectedHotel.id;
   }
 
 }

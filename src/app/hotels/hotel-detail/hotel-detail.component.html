@@ -1,6 +1,6 @@
 <div *ngIf="(hotel$ | async) as hotel; else loading">
         <app-hotel-info [hotel]="hotel"></app-hotel-info>
-        <a mat-button routerLink="comments" [queryParams]="{id: hotel.id}">Comments</a>
+        <a mat-button [routerLink]="['comments']">Comments</a>
         <a mat-button routerLink="contacts">Contacts</a>
         <router-outlet></router-outlet>
 </div>

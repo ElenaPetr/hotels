@@ -1,6 +1,7 @@
 import {Comment} from './comment';
 
 export interface HotelComments {
-    id: string;
+    id: number;
+    hotelId: number;
     comments: Comment[];
 }

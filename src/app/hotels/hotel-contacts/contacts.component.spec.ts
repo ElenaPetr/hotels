@@ -1,14 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContactsComponent } from './contacts.component';
+import { HotelContactsComponent } from './hotel-contacts.component';
 
 describe('ContactsComponent', () => {
-  let component: ContactsComponent;
-  let fixture: ComponentFixture<ContactsComponent>;
+  let component: HotelContactsComponent;
+  let fixture: ComponentFixture<HotelContactsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactsComponent ]
+      declarations: [ HotelContactsComponent ]
     })
     .compileComponents();
   }));

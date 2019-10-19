@@ -73,13 +73,8 @@ export class SharedHotelsService {
     );
   }
 
-  public getCommentsById(id: string): Observable<HotelComments> {
-    return this.http.get<HotelComments>(`${environment.api}/comments/${id}`).pipe(
-      tap(() => console.log('getCommentById')),
-      catchError(() => {
-        console.log('error');
-        return of(null);
-      })
-    );
+  public getCommentsById(id: number): Observable<HotelComments> {
+    console.log('getCommentsById', id);
+    return this.http.get<HotelComments>(`${environment.api}/hotels/${id}/comments`);
   }
 }

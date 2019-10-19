@@ -12,7 +12,7 @@ import { HotelsRoutingModule } from './hotels-routing.module';
 import { HotelsComponent } from './hotels/hotels.component';
 import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
 import { CommentsComponent } from './comments/comments.component';
-import { ContactsComponent } from './contacts/contacts.component';
+import { HotelContactsComponent } from './hotel-contacts/hotel-contacts.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     HotelsComponent,
     HotelDetailComponent,
     CommentsComponent,
-    ContactsComponent
+    HotelContactsComponent
   ],
   imports: [
     CommonModule,

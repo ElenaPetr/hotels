@@ -4,11 +4,11 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: '/hotels', pathMatch: 'full' },
   { path: 'contacts', loadChildren: () => import('./pages/contacts/contacts.module').then(mod => mod.ContactsModule) },
   { path: 'about', loadChildren: () => import('./pages/about/about.module').then(mod => mod.AboutModule) },
   {
-    path: '', loadChildren: () => import('./hotels/hotels.module').then(mod => mod.HotelsModule)
+    path: 'hotels', loadChildren: () => import('./hotels/hotels.module').then(mod => mod.HotelsModule)
   },
   {
     path: 'users', loadChildren: () => import('./pages/users/users.module').then(mod => mod.UsersModule)

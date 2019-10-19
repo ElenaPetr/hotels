@@ -3,7 +3,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { HotelComments } from 'src/app/models/hotel-comments';
 import { SharedHotelsService } from 'src/app/shared/services/shared-hotels.service';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
+import { HotelsComponent } from '../hotels/hotels.component';
 
 @Component({
   selector: 'app-comments',
@@ -19,8 +20,10 @@ export class CommentsComponent implements OnInit {
   ) { }
 
   public ngOnInit() {
-    this.comments$ = this.route.queryParamMap.pipe(
-      switchMap((params: ParamMap) => this.sharedHotelsService.getCommentsById(params.get('id'))
+    console.log('comments init');
+    this.comments$ = this.route.parent.paramMap.pipe(
+      tap((params: ParamMap) => console.log(params.get('id'))),
+      switchMap((params: ParamMap) => this.sharedHotelsService.getCommentsById(+params.get('id'))
       )
     );
   }
