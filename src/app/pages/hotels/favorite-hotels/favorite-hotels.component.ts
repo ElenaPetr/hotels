@@ -1,9 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { SharedFavoriteHotelsService } from 'src/app/shared/services/favorites/shared-favorite-hotels.service';
 import { switchMap } from 'rxjs/operators';
 import { HttpFavoritesService } from 'src/app/shared/services/favorites/http-favorites.service';
 import { Hotel } from 'src/app/models/hotel';
+import { Store, select } from '@ngrx/store';
+import { IRootState } from 'src/app/reducers';
+import { DeleteFavoriteHotel, LoadFavoriteHotels } from './state/favorite-hotels.actions';
 
 @Component({
   selector: 'app-favorite-hotels',
@@ -11,40 +14,23 @@ import { Hotel } from 'src/app/models/hotel';
   styleUrls: ['./favorite-hotels.component.scss', '../hotel-info/hotel-info.component.scss']
 })
 export class FavoriteHotelsComponent implements OnInit, OnDestroy {
-
-  public favoriteHotels: Hotel[];
-  public favoriteSubscription: Subscription;
+  public favoriteHotels$: Observable<Hotel[]>;
 
   public constructor(
+    private store: Store<IRootState>,
     private sharedFavoriteHotelsService: SharedFavoriteHotelsService,
     private httpFavoritesService: HttpFavoritesService) {
-    this.getFavorites();
-    this.favoriteSubscription = this.sharedFavoriteHotelsService.favorites$.subscribe(favorites => {
-      this.favoriteHotels = favorites;
-      console.log('from favoritSubscription', this.favoriteHotels);
-    });
+      this.favoriteHotels$ = this.store.pipe(select('favoriteHotels'));
   }
 
   public ngOnInit() {
+    this.store.dispatch(LoadFavoriteHotels());
   }
-
-  public getFavorites(): void {
-    this.httpFavoritesService.getFavorites().subscribe(favorites => {
-      console.log(favorites);
-      this.favoriteHotels = favorites;
-    });
-  }
-
 
   public ngOnDestroy() {
-    this.favoriteSubscription.unsubscribe();
   }
 
   public deleteFavorite(id: number) {
-    this.httpFavoritesService.deleteFavorive(id).pipe(
-      switchMap(() => this.httpFavoritesService.getFavorites())).subscribe(f => {
-        console.log(f);
-        this.sharedFavoriteHotelsService.setFavorites(f);
-      });
+    this.store.dispatch(DeleteFavoriteHotel({ id }));
   }
 }

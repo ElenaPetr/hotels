@@ -29,11 +29,8 @@ export class LocalStorageService {
   }
 
   public addFavoriteHotel(hotel: Hotel) {
-    console.log('addFavoriteHotel', hotel);
     const test = this.getFavoriteHotels();
-    console.log(typeof test);
     test.push(hotel);
-    console.log(test);
     this.setFavoriteHotels(test);
   }
 

@@ -38,7 +38,7 @@ export class HttpFavoritesService {
       );
   }
 
-  public deleteFavorive(id: number): Observable<Hotel> {
+  public deleteFavorite(id: number): Observable<Hotel> {
     return this.http.delete<Hotel>(`${this.url}/${id}`).pipe(
       tap(_ => console.log(`deleted favorite id=${id}`)),
       catchError(this.handleError<Hotel>('deleteFavorive'))

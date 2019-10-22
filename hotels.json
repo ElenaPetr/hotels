@@ -228,29 +228,6 @@
   ],
   "favorites": [
     {
-      "id": 1,
-      "title": "1-Universal Cabana",
-      "address": "Orlando",
-      "description": "Best one!",
-      "phone": "+3242353434",
-      "picture": "assets/images/1.jpg",
-      "photos": [
-        "assets/images/res.jpg",
-        "assets/images/r1.jpg"
-      ],
-      "weather": {
-        "temperature": 12,
-        "wind": 11,
-        "icon": "sun"
-      },
-      "profile": {
-        "followers": 112,
-        "following": 11,
-        "photo": "assets/images/b1.jpg"
-      },
-      "stars": 3
-    },
-    {
       "id": 14,
       "title": "5-Wind_13",
       "address": "Antalia_14",
@@ -272,29 +249,6 @@
         "photo": "assets/images/8.jpg"
       },
       "stars": 5
-    },
-    {
-      "id": 5,
-      "title": "2-Wind_1",
-      "address": "Antalia_1",
-      "description": "Lorem ipson 25_1",
-      "phone": "+32423555448",
-      "picture": "assets/images/b2.jpg",
-      "photos": [
-        "assets/images/res.jpg",
-        "assets/images/r1.jpg"
-      ],
-      "weather": {
-        "temperature": 38,
-        "wind": 2,
-        "icon": "sun"
-      },
-      "profile": {
-        "followers": 158,
-        "following": 178,
-        "photo": "assets/images/8.jpg"
-      },
-      "stars": 4
     }
   ],
   "comments": [
@@ -449,28 +403,6 @@
         {
           "author": "Lisa",
           "description": "sad comment for hotel id 11"
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "hotelId": 12,
-      "comments": [
-        {
-          "author": "Julia",
-          "description": "good comment for hotel id 12"
-        },
-        {
-          "author": "Jack",
-          "description": "awesome comment for hotel id 12"
-        },
-        {
-          "author": "Nick",
-          "description": "fun comment for hotel id 12"
-        },
-        {
-          "author": "Lisa",
-          "description": "sad comment for hotel id 12"
         }
       ]
     },

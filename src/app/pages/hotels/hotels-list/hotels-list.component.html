@@ -16,12 +16,13 @@
             <div class="activity_box">
                 <div class="scrollbar" id="style-2">
                     <div *ngFor="let hotel of hotels$ | async | hotelFilter : filterString | starsFilter: starValue">
-                        
-                        <app-hotel-info [hotel]="hotel" (click)="toHotelDetail(hotel)" (delete)="deleteHotel($event)"></app-hotel-info>
+
+                        <app-hotel-info [hotel]="hotel" (click)="toHotelDetail(hotel)" (delete)="deleteHotel($event)">
+                        </app-hotel-info>
                     </div>
                 </div>
-                <mat-paginator [length]="length" [pageSizeOptions]="pageSizeOptions" [pageIndex]="pageIndex()" showFirstLastButtons
-                    (page)="goToPage($event)">
+                <mat-paginator [length]="length" [pageSizeOptions]="pageSizeOptions" [pageIndex]="pageIndex()"
+                    showFirstLastButtons (page)="goToPage($event)">
                 </mat-paginator>
             </div>
         </div>

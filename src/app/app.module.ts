@@ -14,6 +14,12 @@ import { AboutComponent } from './pages/about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { UsersModule } from './pages/users/users.module';
+import {StoreModule} from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers } from './reducers/index';
+import { environment } from 'src/environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { FavoriteEffects } from './pages/hotels/favorite-hotels/state/favorite.effects';
 
 @NgModule({
   declarations: [
@@ -28,6 +34,13 @@ import { UsersModule } from './pages/users/users.module';
     FragmentsModule,
     SharedModule,
     AppRoutingModule,
+    StoreModule.forRoot(reducers, { runtimeChecks : { }}),
+    EffectsModule.forRoot([FavoriteEffects]),
+    // EffectsModule.forFeature([FavoriteEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },
