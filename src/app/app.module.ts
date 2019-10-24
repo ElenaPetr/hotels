@@ -20,6 +20,7 @@ import { reducers } from './reducers/index';
 import { environment } from 'src/environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { FavoriteEffects } from './pages/hotels/favorite-hotels/state/favorite.effects';
+import { HotelsEffects } from './pages/hotels/state/hotels.effects';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { FavoriteEffects } from './pages/hotels/favorite-hotels/state/favorite.e
     SharedModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, { runtimeChecks : { }}),
-    EffectsModule.forRoot([FavoriteEffects]),
+    EffectsModule.forRoot([FavoriteEffects, HotelsEffects]),
     // EffectsModule.forFeature([FavoriteEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

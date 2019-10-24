@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, mergeMap, catchError, tap, switchMap } from 'rxjs/operators';
 import { HttpFavoritesService } from 'src/app/shared/services/favorites/http-favorites.service';
 import { EMPTY } from 'rxjs';
+// tslint:disable-next-line: max-line-length
 import { AddFavoriteHotel, LoadFavoriteHotels, LoadFavoriteHotelsSuccess, DeleteFavoriteHotel } from './favorite-hotels.actions';
 
 @Injectable()

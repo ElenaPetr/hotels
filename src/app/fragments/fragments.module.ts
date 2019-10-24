@@ -20,6 +20,7 @@ import { DeleteHotelModalComponent } from './modals/delete-hotel-modal/delete-ho
   exports: [
     HeaderComponent,
     FooterComponent,
+    SharedModule,
     DeleteHotelModalComponent
   ],
   entryComponents: [DeleteHotelModalComponent]

@@ -7,6 +7,9 @@ import { SharedSelectedHotelService } from 'src/app/shared/services/shared-selec
 import { PageEvent } from '@angular/material';
 import { Router, ActivatedRoute, Params, ParamMap } from '@angular/router';
 import { tap, switchMap } from 'rxjs/operators';
+import { Store, select } from '@ngrx/store';
+import { IRootState } from 'src/app/reducers';
+import { LoadHotels } from '../state/hotels.actions';
 
 @Component({
   selector: 'app-hotels-list',
@@ -35,11 +38,12 @@ export class HotelsListComponent implements OnInit {
 
 
   constructor(
+    private store: Store<IRootState>,
     private router: Router,
     private route: ActivatedRoute,
     private sharedHotelsService: SharedHotelsService,
     private sharedSelectedHotelService: SharedSelectedHotelService
-  ) { }
+  ) { this.hotels$ = this.store.pipe(select('hotels')); }
 
   public ngOnInit() {
     this.sharedHotelsService.getAllHotels().subscribe(hotels => {
@@ -50,17 +54,16 @@ export class HotelsListComponent implements OnInit {
     this.fetchHotels();
   }
 
-  public fetchHotels(params?: Partial<PageEvent>): void {
+  public fetchHotels(): void {
     console.log('fetchHotels');
-    this.hotels$ = this.route.queryParamMap.pipe(
-      switchMap((data: ParamMap) => {
-        if (data.has('pageIndex')) {
-          this.params.pageIndex = Number(data.get('pageIndex'));
-          this.params.pageSize = Number(data.get('pageSize'));
-        }
-        return this.sharedHotelsService.getHotels(this.params);
-      })
-    );
+    this.route.queryParamMap.subscribe(param => {
+      if (param.has('pageIndex')) {
+        this.params.pageIndex = Number(param.get('pageIndex'));
+        this.params.pageSize = Number(param.get('pageSize'));
+      }
+      console.log('fetchHotels', this.params);
+      this.store.dispatch(LoadHotels({ page: this.params }));
+    });
   }
 
   public pageIndex() {

@@ -249,6 +249,29 @@
         "photo": "assets/images/8.jpg"
       },
       "stars": 5
+    },
+    {
+      "id": 6,
+      "title": "3-Wind_2",
+      "address": "Antalia_2",
+      "description": "Lorem ipson 25_2",
+      "phone": "+3242358884",
+      "picture": "assets/images/b2.jpg",
+      "photos": [
+        "assets/images/res.jpg",
+        "assets/images/r1.jpg"
+      ],
+      "weather": {
+        "temperature": 29,
+        "wind": 3,
+        "icon": "sun"
+      },
+      "profile": {
+        "followers": 528,
+        "following": 718,
+        "photo": "assets/images/8.jpg"
+      },
+      "stars": 5
     }
   ],
   "comments": [
