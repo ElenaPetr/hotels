@@ -32,11 +32,7 @@ export class HotelInfoComponent implements OnInit, OnDestroy {
     private httpFavoritesService: HttpFavoritesService,
     private authorizationLocalStorageService: AuthorizationLocalStorageService,
     public dialog: MatDialog,
-  ) {
-    // this.favoriteSubscription = this.sharedFavoriteHotelsService.favorites$.subscribe(favorites => {
-    //   this.favoriteHotels = favorites;
-    // });
-  }
+  ) { }
 
   public ngOnInit() {
     this.favoriteSubscription = this.store.pipe(select('favoriteHotels')).subscribe(hotels => {
